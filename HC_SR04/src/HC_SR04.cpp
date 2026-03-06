@@ -1,5 +1,5 @@
 /* 
- * Project HC_SR04
+ * Project HC_SR04 tester
  * Author: Mario Cisneros
  * Date: 3/5/2026
  */
@@ -14,9 +14,20 @@ SYSTEM_MODE(SEMI_AUTOMATIC);
 const int TRIGPIN = D12;
 const int ECHOPIN = D13;
 
+const int RLEDPIN = D3;
+const int GLEDPIN = D4;
+const int BLEDPIN = D6;
+
 float duration, distance;
 
 void setup() {
+  pinMode(RLEDPIN, OUTPUT);
+  pinMode(GLEDPIN, OUTPUT);
+  pinMode(BLEDPIN, OUTPUT);
+  digitalWrite(RLEDPIN, HIGH);
+  digitalWrite(GLEDPIN, HIGH);
+  digitalWrite(BLEDPIN, HIGH);
+
   pinMode(TRIGPIN, OUTPUT);
   pinMode(ECHOPIN, INPUT);
   Serial.begin(9600);
